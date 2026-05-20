@@ -1,6 +1,13 @@
-function renderContent(data) {
-  const main = document.querySelector("main");
+const main = document.querySelector("main");
+const nav = document.querySelector("nav");
+const navLinks = nav.querySelectorAll("a");
+const title = document.querySelector("h1");
+const header = document.querySelector("header");
+const pageTitle = document.querySelector("title");
+const toggleBox = document.querySelector("#toggle-buttons");
+const toggleButtons = toggleBox.querySelectorAll("button")
 
+function renderContent(data) {
   if (!main) {
     console.error("Elemento <main> não encontrado.");
     return;
@@ -115,17 +122,16 @@ function renderContent(data) {
         caption.style.cssText = "text-align: center";
         figure.appendChild(caption);
         let count = 1;
-      setInterval(() => {
-        console.log(count)
-        img.src = content.urls[count];
-        caption.textContent = content.captions[count];
-        count++
-        if (count > content.urls.length-1){
-          count = 0;
-        }
-      }, 5000);
+        setInterval(() => {
+          img.src = content.urls[count];
+          caption.textContent = content.captions[count];
+          count++;
+          if (count > content.urls.length - 1) {
+            count = 0;
+          }
+        }, 5000);
       }
-    
+
       return figure;
     } else {
       return null;
@@ -133,7 +139,7 @@ function renderContent(data) {
   }
 
   function renderContentBlock(content) {
-    console.log(content.type)
+    console.log(content.type);
     switch (content.type) {
       case "photo":
         return renderPhoto(content);
@@ -144,7 +150,6 @@ function renderContent(data) {
       case "table":
         return renderTable(content);
       case "photos":
-        console.log(9)
         return renderPhotosList(content);
 
       default:
@@ -171,7 +176,7 @@ function renderContent(data) {
 
           // 🔥 NOVO: renderiza conteúdo real
           if (child.content) {
-            console.log(child)
+            console.log(child);
             const contentEl = renderContentBlock(child.content);
 
             if (contentEl) {
@@ -195,6 +200,36 @@ function renderContent(data) {
   main.appendChild(container);
 }
 
-function navColor(params) {
-  
+function areElemsOverlap(el1, el2) {
+  const r1 = el1.getBoundingClientRect();
+  const r2 = el2.getBoundingClientRect();
+
+  return !(
+    r1.right < r2.left ||
+    r1.left > r2.right ||
+    r1.bottom < r2.top ||
+    r1.top > r2.bottom
+  );
+}
+
+function navColor() {
+  console.log(areElemsOverlap(nav, main));
+  if (areElemsOverlap(nav, main)) {
+    navLinks.forEach((link) => {
+      link.style.cssText = "color: black;   text-shadow: 4px 4px 11px #fff";
+    });
+  } else {
+    navLinks.forEach((link) => {
+      link.style.cssText = "color: white;   text-shadow: 4px 4px 11px #000";
+    });
+  }
+}
+
+function setElements(cont, index) {
+  pageTitle.innerText = cont[index].title;
+  title.innerText = cont[index].title;
+  document.body.style.cssText = `background: url(${cont[index].background}); background-size: cover;  background-attachment: fixed;`;
+  cont[index].mainContent.forEach((element) => {
+    renderContent(element);
+  });
 }

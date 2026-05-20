@@ -22,9 +22,11 @@ body {
 }
 nav {
   height: var(--nav-height);
-  width: 60%;
   position: fixed;
+  width: 100%;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
 }
 nav #items {
   display: grid;
@@ -39,6 +41,31 @@ nav #items {
   color: white;
   text-shadow: 4px 4px 11px #000000;
   text-align: center;
+}
+#toggle-buttons{
+  justify-self: flex-end;
+  align-self: center;
+  position: relative;
+  right: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 120px;
+  height: 75%;
+  gap: 20px;
+}
+#toggle-buttons button{
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: none ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#toggle-peru{
+  background:  url(../images/peru/bandeira.png);
+}
+#toggle-bolivia{
+  background:  url(../images/bolivia/bandeira.png);
 }
 header {
   display: grid;
