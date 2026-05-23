@@ -35,8 +35,9 @@
 .lateral-card table {
   border: 1px solid black;
 }
-.lateral-card{
+.lateral-card {
   width: 325px;
   height: 225px;
   align-self: center;
+  justify-self: center;
 }

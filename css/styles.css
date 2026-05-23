@@ -99,6 +99,8 @@ main {
 p {
   text-indent: 60px;
   text-align: justify;
+  align-self: center;
+  justify-self: center;
 }
 button {
   transition: 250ms;
