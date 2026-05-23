@@ -22,25 +22,43 @@ let siteContent = [
         ],
       },
       {
-        title: "atracciones turísticas y comida",
+        title: "Atracciones turísticas",
         textContent:
-          "Los principales atractivos turisticos es: Machu Picchu (Cusco): La ciudadela inca considerada una de las Siete Maravillas del Mundo Moderno. Líneas de Nazca (Ica): Gigantescos geoglifos en el desierto que representan figuras de animales y plantas, visibles solo desde el aire. Lago Titicaca (Puno): El lago navegable más alto del mundo, hogar de las islas flotantes de los Uros. Valle del Colca (Arequipa): Uno de los cañones más profundos del mundo, ideal para el avistamiento del cóndor andino. Las principales Comidas es: Ceviche: Pescado fresco marinado en jugo de limón, ají limo, cebolla y sal. Es el plato bandera. Lomo Saltado: Un salteado de carne de res, cebolla y tomate en wok, que fusiona la técnica china con ingredientes peruanos. Ají de Gallina: Crema espesa a base de ají amarillo, pan y leche, servida con gallina deshilachada. Cuy Chactado: Conejillo de indias frito a la piedra, típico de la región andina.",
+          "Los principales atractivos turisticos es:<ul> <li><b>Machu Picchu (Cusco)</b>: La ciudadela inca considerada una de las Siete Maravillas del Mundo Moderno. </li><li><b>Líneas de Nazca (Ica)</b>: Gigantescos geoglifos en el desierto que representan figuras de animales y plantas, visibles solo desde el aire. </li><li><b>Lago Titicaca (Puno)</b>: El lago navegable más alto del mundo, hogar de las islas flotantes de los Uros. </li><li><b>Valle del Colca (Arequipa)</b>: Uno de los cañones más profundos del mundo, ideal para el avistamiento del cóndor andino.</li></ul>",
+        children: [
+          {
+            type: "lateral-card",
+            orientation: "right",
+            content: {
+              type: "photos",
+              urls: [
+                "images/peru/machu.png",
+                "images/peru/lineas.png",
+                "images/peru/titicaca.png",
+                "images/peru/colca.png",
+              ],
+              captions: [
+                "Machu Picchu",
+                "Lineas de Nazca",
+                "Lago Titicaca",
+                "Valle del Colca",
+              ].map((n) => upperCaseFirst(n)),
+            },
+          },
+        ],
+      },
+      {
+        title: "Comidas",
+        textContent:
+          "Las principales Comidas es: <ul><li><b>Ceviche</b>: Pescado fresco marinado en jugo de limón, ají limo, cebolla y sal. Es el plato bandera. </li><li><b>Lomo Saltado</b>: Un salteado de carne de res, cebolla y tomate en wok, que fusiona la técnica china con ingredientes peruanos. </li><li><b>Ají de Gallina</b>: Crema espesa a base de ají amarillo, pan y leche, servida con gallina deshilachada. </li><li><b>Cuy Chactado:</b> Conejillo de indias frito a la piedra, típico de la región andina.</li></ul>",
         children: [
           {
             type: "lateral-card",
             orientation: "left",
             content: {
               type: "photos",
-              urls: [
-                "https://dynamic-media.tacdn.com/media/photo-o/2f/ba/e1/6f/caption.jpg?w=2400&h=-1&s=1",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAO1iE1sXw4ADhUD6RzX1Ux58NQ01aQRo9ig&s",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ZM0F1parlOShsBg19emqlcEbEsFxXUbPuQ&s",
-              ],
-              captions: [
-                "lima, Capital e maior cidade do Peru",
-                "machu Pichu, ponto turístico mais famoso do Peru",
-                "lhama, animal presente no Peru e em outros países da Região",
-              ].map((n) => upperCaseFirst(n)),
+              urls: ["images/peru/ceviche.png", "images/peru/lomo.png", "images/peru/aji.png", "images/peru/cuy.png"],
+              captions: ["Ceviche", "Lomo Saltado", "Ají de Gallina", "Cuy Chactado"],
             },
           },
         ],
