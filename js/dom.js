@@ -2,6 +2,7 @@ const main = document.querySelector("main");
 const nav = document.querySelector("nav");
 const navLinks = nav.querySelectorAll("a");
 const title = document.querySelector("h1");
+const subtitle = document.querySelector("header h2");
 const header = document.querySelector("header");
 const pageTitle = document.querySelector("title");
 const toggleBox = document.querySelector("#toggle-buttons");
@@ -219,6 +220,8 @@ function navColor() {
   if (areElemsOverlap(nav, main)) {
     navLinks.forEach((link) => {
       link.style.cssText = "color: black;   text-shadow: 4px 4px 11px #fff;";
+      nav.style.cssText =
+        " background: white; border-bottom: 1px solid #c7c7c7ff;;";
       nav.style.cssText =
         " background: white; border-bottom: 1px solid #c7c7c7ff;";
       menuIcon.setAttribute("fill", "#000");
