@@ -124,7 +124,7 @@ function renderContent(data) {
       if (content.captions) {
         const caption = document.createElement("figcaption");
         caption.textContent = content.captions[0];
-        caption.style.cssText = "text-align: center";
+        caption.style.cssText = "text-align: center; margin-top: 20px";
         figure.appendChild(caption);
         let count = 1;
         setInterval(() => {

@@ -6,7 +6,7 @@ let siteContent = [
     background: "images/peru/background.png",
     mainContent: [
       {
-        title: "Nacionalidad Peruana",
+        title: "La Nación Peruana",
         textContent:
           "Perú se encuentra en la costa occidental de América del Sur. Limita con Ecuador, Colombia, Brasil, Bolivia y Chile. <br>La bandera peruana consta de tres franjas verticales de igual ancho: las exteriores son rojas y la central es blanca. El rojo simboliza la sangre derramada por héroes y patriotas, mientras que el blanco representa la pureza de sentimiento, la libertad y la paz. <br>La Moneda oficial es el Sol (PEN): Se divide en 100 céntimos. Es conocida por ser una de las monedas más estables de la región latinoamericana.",
         children: [
@@ -14,9 +14,17 @@ let siteContent = [
             type: "lateral-card",
             orientation: "left",
             content: {
-              type: "photo",
-              url: "images/peru/bandeira.png",
-              caption: "Bandeira do Peru",
+              type: "photos",
+              urls: [
+                "images/peru/bandeira.png",
+                "images/peru/mapa.png",
+                "images/peru/moeda.png",
+              ],
+              captions: [
+                "Bandera Peruana",
+                "Mapa del territorio peruano",
+                "El sol, la moneda que se utiliza actualmente en Perú.",
+              ],
             },
           },
         ],
@@ -57,8 +65,90 @@ let siteContent = [
             orientation: "left",
             content: {
               type: "photos",
-              urls: ["images/peru/ceviche.png", "images/peru/lomo.png", "images/peru/aji.png", "images/peru/cuy.png"],
-              captions: ["Ceviche", "Lomo Saltado", "Ají de Gallina", "Cuy Chactado"],
+              urls: [
+                "images/peru/ceviche.png",
+                "images/peru/lomo.png",
+                "images/peru/aji.png",
+                "images/peru/cuy.png",
+              ],
+              captions: [
+                "Ceviche",
+                "Lomo Saltado",
+                "Ají de Gallina",
+                "Cuy Chactado",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Danzas y Músicas Típicas",
+        textContent:
+          "<ul><li><b>La Marinera</b>: Danza elegante de pareja que representa el cortejo, caracterizada por el uso de pañuelos. La versión norteña es la más famosa.</li><li><b>Huayno</b>: El género musical y baile más difundido de los Andes, con instrumentos como la quena, el arpa y el charango.</li><li><b>Música Afroperuana</b>: Destaca el Festejo y el uso del Cajón Peruano, un instrumento de percusión fundamental que hoy se usa en la música del mundo.</li></ul>",
+        children: [
+          {
+            type: "lateral-card",
+            orientation: "right",
+            content: {
+              type: "photos",
+              urls: [
+                "images/peru/marinera.png",
+                "images/peru/huayno.png",
+                "images/peru/afro.png",
+              ],
+              captions: [
+                "La Marinera",
+                "Huayno",
+                "Canción criolla, un ejemplo de música afroperuana.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Personalidades",
+        textContent:
+          '<ul><li><b>Gastón Acurio</b>: Chef responsable de la internacionalización de la cocina peruana.</li><li><b>Mario Vargas Llosa</b>: Escritor ganador del Premio Nobel de Literatura en 2010.</li><li><b>Aníbal Quijano (1928–2018)</b>: Filósofo y Sociólogo mundialmente reconocido por desarrollar el concepto de "Colonialidad del Poder".</li></ul>',
+        children: [
+          {
+            type: "lateral-card",
+            orientation: "left",
+            content: {
+              type: "photos",
+              urls: [
+                "images/peru/gaston.png",
+                "images/peru/vargas.png",
+                "images/peru/anibal.png",
+              ],
+              captions: [
+                "Gastón Acurio",
+                "Mario Vargas Llosa",
+                "Ánibal Quijano",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Las ideas de Quijano",
+        textContent:
+          'Quijano argumentaba que, aunque el colonialismo político terminó, las estructuras de poder jerárquicas basadas en la "raza" y la clasificación social impuestas en la época colonial persisten en el capitalismo moderno y en la cultura actual, afectando la identidad de los países latinoamericanos.',
+      },
+      {
+        title: "Una Curiosidad",
+        textContent:
+          "Perú es el centro de origen de la papa (patata). En el país existen más de 3,000 variedades de papas nativas con diferentes colores, formas y texturas. Existe incluso el Centro Internacional de la Papa (CIP) en Lima para proteger este patrimonio genético mundial.",
+        children: [
+          {
+            type: "lateral-card",
+            orientation: "right",
+            content: {
+              type: "photos",
+              urls: ["images/peru/papas.png", "images/peru/cip.png"],
+              captions: [
+                "Variedad de Patatas",
+                "Centro Internacional de la Papa (CIP)",
+              ],
             },
           },
         ],

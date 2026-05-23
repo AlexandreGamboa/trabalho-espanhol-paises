@@ -25,11 +25,10 @@ nav {
   height: var(--nav-height);
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   display: grid;
   grid-template-columns: 6fr 4fr;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
-
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);*/
 }
 nav #items {
   display: grid;
@@ -78,6 +77,18 @@ header {
   grid-template-rows: repeat(2, 1fr);
   height: 100vh;
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+body::before {
+  content: "";
+  backdrop-filter: blur(500px);
+  mask-image: linear-gradient(0deg, black 0%, transparent 100%);
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
 }
 h1 {
   font-size: 110px;
@@ -96,11 +107,15 @@ main {
   margin-right: auto;
   border-radius: 20px;
 }
+main h2 {
+  font-size: 1.8em;
+}
 p {
   text-indent: 60px;
   text-align: justify;
   align-self: center;
   justify-self: center;
+  font-size: 1.2em;
 }
 button {
   transition: 250ms;
@@ -113,9 +128,11 @@ button:hover {
 #menu-button {
   display: none;
 }
-ul, ol{
+ul,
+ol {
   list-style-position: inside;
 }
-ul li, ol li{
+ul li,
+ol li {
   text-indent: 20px;
 }
